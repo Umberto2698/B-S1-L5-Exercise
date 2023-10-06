@@ -3,9 +3,10 @@ import mediaPlayer.RegistrazioneAudio;
 import mediaPlayer.Video;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Player {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Object[] arrayElementiMultimediali = new Object[5];
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < arrayElementiMultimediali.length; i++) {
@@ -33,6 +34,13 @@ public class Player {
         short n;
         String action;
         do {
+            System.out.println("Accensione");
+            TimeUnit.MILLISECONDS.sleep(500);
+            System.out.println(".");
+            TimeUnit.MILLISECONDS.sleep(500);
+            System.out.println("..");
+            TimeUnit.MILLISECONDS.sleep(500);
+            System.out.println("...");
             System.out.println("Quale elemento vuoi eseguire?");
             do {
                 System.out.println("Inserisci unb numero intero tra 1 e 5 (compresi), 0 per terminare la riproduzione.");
