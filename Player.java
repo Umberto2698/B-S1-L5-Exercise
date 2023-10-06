@@ -106,7 +106,7 @@ public class Player {
                     System.out.println("Vuoi cambiarle?");
                     do {
                         action = "";
-                        System.out.println("Scegli +v per alzare il volume, -v per abbassarlo, +l per alzare la luminosità, -l per abbssarla, n per non modificare e avviare il video..");
+                        System.out.println("Scegli +v per alzare il volume, -v per abbassarlo, +l per alzare la luminosità, -l per abbssarla, n per non modificare e avviare il video.");
                         switch (input.nextLine()) {
                             case "+v" -> {
                                 ((Video) currentElement).alzaVolume();
