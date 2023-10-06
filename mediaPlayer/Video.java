@@ -61,4 +61,14 @@ public class Video extends ElementoMultimediale implements RegolazioneVolume, Re
             System.out.println(this.titolo + str);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "titolo=" + titolo +
+                ", volume=" + volume +
+                ", durata=" + durata +
+                ", luminosità=" + luminosità + '\'' +
+                '}';
+    }
 }

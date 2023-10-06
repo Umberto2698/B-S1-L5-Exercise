@@ -40,4 +40,13 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Regolazi
             System.out.println(this.titolo + str);
         }
     }
+
+    @Override
+    public String toString() {
+        return "RegistrazioneAudio{" +
+                "titolo=" + titolo +
+                ", volume=" + volume +
+                ", durata=" + durata + '\'' +
+                '}';
+    }
 }

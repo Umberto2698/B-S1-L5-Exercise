@@ -35,4 +35,12 @@ public class Immagine extends ElementoMultimediale implements RegolazioneLuminos
         System.out.println(this.titolo + str);
 
     }
+
+    @Override
+    public String toString() {
+        return "Immagine{" +
+                "titolo=" + titolo +
+                ", luminosità=" + luminosità + '\'' +
+                '}';
+    }
 }
