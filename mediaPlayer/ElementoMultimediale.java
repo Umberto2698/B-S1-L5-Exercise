@@ -1,8 +1,11 @@
 package mediaPlayer;
 
 abstract class ElementoMultimediale {
+
+    //Attributes
     String titolo;
 
+    //Methods
     public void esegui() {
         if (this instanceof Immagine) {
             ((NonRiproducibile) this).show();

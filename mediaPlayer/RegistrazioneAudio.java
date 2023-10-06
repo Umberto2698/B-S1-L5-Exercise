@@ -2,15 +2,17 @@ package mediaPlayer;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements RegolazioneVolume, Riproducibili {
 
+    //Attributes
     int volume = 5;
     int durata;
 
-
+    //Constructors
     public RegistrazioneAudio(String titolo, int durata) {
         this.titolo = titolo;
         this.durata = durata;
     }
 
+    //Methods
     @Override
     public void alzaVolume() {
         if (this.volume < 10) {
@@ -48,5 +50,14 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Regolazi
                 ", volume=" + volume +
                 ", durata=" + durata + '\'' +
                 '}';
+    }
+
+    //Getters
+    public int getVolume() {
+        return volume;
+    }
+
+    public int getDurata() {
+        return durata;
     }
 }

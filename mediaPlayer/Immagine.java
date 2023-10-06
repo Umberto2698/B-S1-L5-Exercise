@@ -2,12 +2,15 @@ package mediaPlayer;
 
 public class Immagine extends ElementoMultimediale implements RegolazioneLuminosità, NonRiproducibile {
 
+    //Attributes
     int luminosità = 4;
 
+    //Constructors
     public Immagine(String title) {
         this.titolo = title;
     }
 
+    //Methods
     @Override
     public void alzaLuminosità() {
         if (this.luminosità < 10) {
@@ -42,5 +45,10 @@ public class Immagine extends ElementoMultimediale implements RegolazioneLuminos
                 "titolo=" + titolo +
                 ", luminosità=" + luminosità + '\'' +
                 '}';
+    }
+    
+    // Getters
+    public int getLuminosità() {
+        return luminosità;
     }
 }

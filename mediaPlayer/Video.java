@@ -1,16 +1,19 @@
 package mediaPlayer;
 
 public class Video extends ElementoMultimediale implements RegolazioneVolume, RegolazioneLuminosità, Riproducibili {
+
+    //Attributes
     int volume = 5;
     int durata;
     int luminosità = 3;
 
-
+    //Constructors
     public Video(String titolo, int durata) {
         this.titolo = titolo;
         this.durata = durata;
     }
 
+    //Methods
     @Override
     public void alzaVolume() {
         if (this.volume < 10) {
@@ -70,5 +73,18 @@ public class Video extends ElementoMultimediale implements RegolazioneVolume, Re
                 ", durata=" + durata +
                 ", luminosità=" + luminosità + '\'' +
                 '}';
+    }
+
+    //Getters
+    public int getVolume() {
+        return volume;
+    }
+
+    public int getDurata() {
+        return durata;
+    }
+
+    public int getLuminosità() {
+        return luminosità;
     }
 }

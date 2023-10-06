@@ -31,21 +31,105 @@ public class Player {
             }
         }
         short n;
-        System.out.println(arrayElementiMultimediali[1]);
+        String action;
         do {
             System.out.println("Quale elemento vuoi eseguire?");
             do {
                 System.out.println("Inserisci unb numero intero tra 1 e 5 (compresi), 0 per terminare la riproduzione.");
                 n = Short.parseShort(input.nextLine());
             } while (n < 0);
-            if (n == 0) System.out.println("Player spento.");
-            if (arrayElementiMultimediali[n - 1] instanceof Immagine) {
-                ((Immagine) arrayElementiMultimediali[n - 1]).esegui();
-            } else if (arrayElementiMultimediali[n - 1] instanceof RegistrazioneAudio) {
-                ((RegistrazioneAudio) arrayElementiMultimediali[n - 1]).esegui();
-            } else {
-                ((Video) arrayElementiMultimediali[n - 1]).esegui();
+            if (n == 0) {
+                System.out.println("Player spento.");
+                input.close();
             }
-        } while (n > 0);
+            Object currentElement = arrayElementiMultimediali[n - 1];
+            if (currentElement instanceof Immagine) {
+                System.out.println("La luminosità corrente è 4, vuoi cambiarla?");
+                do {
+                    action = "";
+                    System.out.println("Scegli +l per alzarla, -l per abbassarla, n per non cambiarla e visualizzare l'immagine.");
+                    switch (input.nextLine()) {
+                        case "+l" -> {
+                            ((Immagine) currentElement).alzaLuminosità();
+                            System.out.println("L'uminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
+                            action = "+l";
+                        }
+                        case "-l" -> {
+                            ((Immagine) currentElement).abbassaLuminosità();
+                            System.out.println("L'uminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
+                            action = "-l";
+                        }
+                        case "n" -> {
+                            ((Immagine) currentElement).esegui();
+                            action = "n";
+                        }
+                        default -> {
+                            action = "";
+                        }
+                    }
+                } while (!action.equals("n"));
+            } else if (currentElement instanceof RegistrazioneAudio) {
+                System.out.println("Il volume corrente è 5, vuoi cambiarlo?");
+                do {
+                    action = "";
+                    System.out.println("Scegli +v per alzarlo, -v per abbassarlo, n per non cambiarlo e ascoltare l'audio.");
+                    switch (input.nextLine()) {
+                        case "+v" -> {
+                            ((RegistrazioneAudio) currentElement).alzaVolume();
+                            System.out.println("L'uminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
+                            action = "+v";
+                        }
+                        case "-v" -> {
+                            ((RegistrazioneAudio) currentElement).abbassaVolume();
+                            System.out.println("L'uminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
+                            action = "-v";
+                        }
+                        case "n" -> {
+                            ((RegistrazioneAudio) currentElement).esegui();
+                            action = "n";
+                        }
+                        default -> {
+                            action = "";
+                        }
+                    }
+                } while (!action.equals("n"));
+            } else {
+                System.out.println("Le impostazioni di default sono: \n Volume=5, Luminosità=3");
+                System.out.println("Vuoi cambiarle?");
+                do {
+                    action = "";
+                    System.out.println("Scegli +v per alzare il volume, -v per abbassarlo, +l per alzare la luminosità, -l per abbssarla, n per non modificare e avviare il video..");
+                    switch (input.nextLine()) {
+                        case "+v" -> {
+                            ((Video) currentElement).alzaVolume();
+                            System.out.println("L'uminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
+                            action = "+v";
+                        }
+                        case "-v" -> {
+                            ((Video) currentElement).abbassaVolume();
+                            System.out.println("L'uminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
+                            action = "-v";
+                        }
+                        case "+l" -> {
+                            ((Video) currentElement).alzaLuminosità();
+                            System.out.println("L'uminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
+                            action = "+l";
+                        }
+                        case "-l" -> {
+                            ((Video) currentElement).abbassaLuminosità();
+                            System.out.println("L'uminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
+                            action = "-l";
+                        }
+                        case "n" -> {
+                            ((Video) currentElement).esegui();
+                            action = "n";
+                        }
+                        default -> {
+                            action = "";
+                        }
+                    }
+                } while (!action.equals("n"));
+            }
+        } while (n != 0);
     }
 }
