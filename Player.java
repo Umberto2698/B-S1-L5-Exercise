@@ -1,3 +1,4 @@
+import mediaPlayer.ElementoMultimediale;
 import mediaPlayer.Immagine;
 import mediaPlayer.RegistrazioneAudio;
 import mediaPlayer.Video;
@@ -7,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Player {
     public static void main(String[] args) throws InterruptedException {
-        Object[] arrayElementiMultimediali = new Object[5];
+        ElementoMultimediale[] arrayElementiMultimediali = new ElementoMultimediale[5];
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < arrayElementiMultimediali.length; i++) {
             System.out.println("Inserisci il titolo della tuo Elemento");
@@ -50,7 +51,7 @@ public class Player {
                 System.out.println("Player spento.");
                 input.close();
             } else {
-                Object currentElement = arrayElementiMultimediali[n - 1];
+                ElementoMultimediale currentElement = arrayElementiMultimediali[n - 1];
                 if (currentElement instanceof Immagine) {
                     System.out.println("La luminosità corrente è 4, vuoi cambiarla?");
                     do {
@@ -68,7 +69,7 @@ public class Player {
                                 action = "-l";
                             }
                             case "n" -> {
-                                ((Immagine) currentElement).esegui();
+                                currentElement.esegui();
                                 action = "n";
                             }
                             default -> {
@@ -93,7 +94,7 @@ public class Player {
                                 action = "-v";
                             }
                             case "n" -> {
-                                ((RegistrazioneAudio) currentElement).esegui();
+                                currentElement.esegui();
                                 action = "n";
                             }
                             default -> {
@@ -129,7 +130,7 @@ public class Player {
                                 action = "-l";
                             }
                             case "n" -> {
-                                ((Video) currentElement).esegui();
+                                currentElement.esegui();
                                 action = "n";
                             }
                             default -> {
