@@ -33,14 +33,14 @@ public class Player {
         }
         short n;
         String action;
+        System.out.println("Accensione");
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println(".");
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println("..");
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println("...");
         do {
-            System.out.println("Accensione");
-            TimeUnit.MILLISECONDS.sleep(500);
-            System.out.println(".");
-            TimeUnit.MILLISECONDS.sleep(500);
-            System.out.println("..");
-            TimeUnit.MILLISECONDS.sleep(500);
-            System.out.println("...");
             System.out.println("Quale elemento vuoi eseguire?");
             do {
                 System.out.println("Inserisci unb numero intero tra 1 e 5 (compresi), 0 per terminare la riproduzione.");
@@ -56,15 +56,15 @@ public class Player {
                     do {
                         action = "";
                         System.out.println("Scegli +l per alzarla, -l per abbassarla, n per non cambiarla e visualizzare l'immagine.");
-                        switch (input.nextLine()) {
+                        switch (input.nextLine().toLowerCase()) {
                             case "+l" -> {
                                 ((Immagine) currentElement).alzaLuminosità();
-                                System.out.println("L'uminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
                                 action = "+l";
                             }
                             case "-l" -> {
                                 ((Immagine) currentElement).abbassaLuminosità();
-                                System.out.println("L'uminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Immagine) currentElement).getLuminosità() + " su 10.");
                                 action = "-l";
                             }
                             case "n" -> {
@@ -81,15 +81,15 @@ public class Player {
                     do {
                         action = "";
                         System.out.println("Scegli +v per alzarlo, -v per abbassarlo, n per non cambiarlo e ascoltare l'audio.");
-                        switch (input.nextLine()) {
+                        switch (input.nextLine().toLowerCase()) {
                             case "+v" -> {
                                 ((RegistrazioneAudio) currentElement).alzaVolume();
-                                System.out.println("L'uminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
                                 action = "+v";
                             }
                             case "-v" -> {
                                 ((RegistrazioneAudio) currentElement).abbassaVolume();
-                                System.out.println("L'uminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((RegistrazioneAudio) currentElement).getVolume() + " su 10.");
                                 action = "-v";
                             }
                             case "n" -> {
@@ -107,25 +107,25 @@ public class Player {
                     do {
                         action = "";
                         System.out.println("Scegli +v per alzare il volume, -v per abbassarlo, +l per alzare la luminosità, -l per abbssarla, n per non modificare e avviare il video.");
-                        switch (input.nextLine()) {
+                        switch (input.nextLine().toLowerCase()) {
                             case "+v" -> {
                                 ((Video) currentElement).alzaVolume();
-                                System.out.println("L'uminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
                                 action = "+v";
                             }
                             case "-v" -> {
                                 ((Video) currentElement).abbassaVolume();
-                                System.out.println("L'uminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Video) currentElement).getVolume() + " su 10.");
                                 action = "-v";
                             }
                             case "+l" -> {
                                 ((Video) currentElement).alzaLuminosità();
-                                System.out.println("L'uminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
                                 action = "+l";
                             }
                             case "-l" -> {
                                 ((Video) currentElement).abbassaLuminosità();
-                                System.out.println("L'uminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
+                                System.out.println("Luminosità corrente " + ((Video) currentElement).getLuminosità() + " su 10.");
                                 action = "-l";
                             }
                             case "n" -> {
