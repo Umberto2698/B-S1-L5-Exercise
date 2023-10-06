@@ -4,6 +4,10 @@ public class Immagine extends ElementoMultimediale implements RegolazioneLuminos
 
     int luminosità = 4;
 
+    public Immagine(String title) {
+        this.titolo = title;
+    }
+
     @Override
     public void alzaLuminosità() {
         if (this.luminosità < 10) {
@@ -21,7 +25,7 @@ public class Immagine extends ElementoMultimediale implements RegolazioneLuminos
             System.out.println("La luminosità è già al minimo.");
         }
     }
-    
+
     @Override
     public void show() {
         String str = "";
